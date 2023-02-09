@@ -1,5 +1,5 @@
 import { Loader, Error, SongCard } from "../components";
 
-const Discover = () => <div>Discover</div>;
+const Discover = () => <div>Diover</div>;
 
 export default Discover;
