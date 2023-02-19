@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Discover = () => {
   const dispatch = useDispatch();
-  const { isPlaying, activeSong } = useSelector((state) => state.player);
+  const { isPlaying, activeSong } = useSelector(state => state.player);
   const { data, isFetching, error } = useGetTopChartsQuery();
   const genreTitle = "Pop";
   if (isFetching) return <Loader title="Loading songs..." />;
