@@ -23,8 +23,7 @@ const Discover = () => {
         >
           {genres.map((genre) => (
             <option key={genre.value}
-             value={genre.value}
-             >
+             value={genre.value}>
               {genre.title}
             </option>
           ))}
