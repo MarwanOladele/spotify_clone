@@ -5,9 +5,8 @@ import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 
 const SongCard = ({ song, i, isPlaying, activeSong, data }) => {
-
-  const handlePauseClick = () => {}
-  const handlePlayClick = () => {}
+  const handlePauseClick = () => {};
+  const handlePlayClick = () => {};
 
   return (
     <div className="flex flex-col w-[250px] p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer ">
@@ -19,10 +18,15 @@ const SongCard = ({ song, i, isPlaying, activeSong, data }) => {
               : "hidden"
           }`}
         >
-          <PlayPause song={song} handlePause={handlePauseClick} handlePlay={handlePlayClick} />
+          <PlayPause
+            song={song}
+            handlePause={handlePauseClick}
+            handlePlay={handlePlayClick}
+            activeSong={activeSong}
+            isPlaying={isPlaying}
+          />
         </div>
         <img src={song.images?.coverart} alt="song_img" />
-        
       </div>
       <div className="mt-4 flex flex-col">
         <p className="font-semibold text-lg text-white  truncate">
