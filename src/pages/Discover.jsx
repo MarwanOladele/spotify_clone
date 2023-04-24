@@ -2,11 +2,8 @@ import { Loader, Error, SongCard } from "../components";
 import { genres } from "../assets/constants";
 import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 const Discover = () => {
-  const { pathname } = useLocation();
   const dispatch = useDispatch();
   const { isPlaying, activeSong } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetTopChartsQuery();
@@ -14,9 +11,6 @@ const Discover = () => {
   if (isFetching) return <Loader title="Loading songs..." />;
   if (error) return <Error />;
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
   return (
     <div className="flex flex-col">
       <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
