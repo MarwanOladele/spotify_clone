@@ -11,6 +11,7 @@ const Discover = () => {
   if (isFetching) return <Loader title="Loading songs..." />;
   if (error) return <Error />;
 
+
   return (
     <div className="flex flex-col">
       <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
@@ -30,7 +31,7 @@ const Discover = () => {
         </select>
       </div>
 
-      <div className="flex flex-wrap justify-start gap-8 ">
+      <div className="flex flex-wrap justify-center gap-8 ">
         {data?.map((song, i) => (
           <SongCard
             key={song.key}
