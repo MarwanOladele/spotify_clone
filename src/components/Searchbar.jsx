@@ -12,6 +12,8 @@ const Searchbar = () => {
 
     navigate(`/search/${searchName}`)
 
+    setSearchName('')
+
   }
   return (
     <form

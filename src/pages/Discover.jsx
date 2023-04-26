@@ -3,8 +3,16 @@ import { genres } from "../assets/constants";
 import { useGetSongsByGenreQuery } from "../redux/services/shazamCore";
 import { useDispatch, useSelector } from "react-redux";
 import { selectGenreListId } from "../redux/features/playerSlice";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Discover = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const dispatch = useDispatch();
   const { isPlaying, activeSong, genreListId } = useSelector(
     (state) => state.player
@@ -16,7 +24,6 @@ const Discover = () => {
   if (error) return <Error />;
 
   const genreTitles = genres.find((genre) => genre.value === genreListId);
-  console.log(genreTitles);
 
   return (
     <div className="flex flex-col">
