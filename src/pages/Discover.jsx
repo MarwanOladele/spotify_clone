@@ -11,7 +11,7 @@ const Discover = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [pathname]);
 
   const dispatch = useDispatch();
   const { isPlaying, activeSong, genreListId } = useSelector(
