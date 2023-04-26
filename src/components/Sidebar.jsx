@@ -44,7 +44,7 @@ const Sidebar = () => {
       </div>
 
       <div
-        className="absolute md:hidden block top-3 right-6 z-10" onClick={() => setToggle(!toggle)}
+        className="absolute md:hidden block top-10 right-6 z-10" onClick={() => setToggle(!toggle)}
       >
         {toggle ? (
           <RiCloseLine size={32} className="text-white" />
@@ -54,7 +54,7 @@ const Sidebar = () => {
       </div>
 
 
-      <div className={`absolute top-0 h-screen w-2/3 bg-gradient-to-tl from-white/10 to-[#483D8B] backdrop-blur-lg z-10 p-6 md:hidden smooth-transition ${toggle ? 'left-0' : '-left-full'}`}>
+      <div className={`absolute top-8 h-screen w-2/3 bg-gradient-to-tl from-white/10 to-[#483D8B] backdrop-blur-lg z-10 p-6 md:hidden smooth-transition ${toggle ? 'left-0' : '-left-full'}`}>
         <img src={logo} alt="logo" className="w-full h-14 object-contain" />
         <div className="mt-10">
           {links.map((item) => (
